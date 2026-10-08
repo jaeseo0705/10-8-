@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f4f7f4">
+<title>복지관 방문 준비</title>
+<style>
+:root{color-scheme:light;--ink:#1d2e40;--muted:#647587;--green:#2865a4;--line:#dce5ef;--soft:#f3f7fb;--white:#fff;--accent:#e8f1fb;--shadow:0 18px 48px #203b5912}
+*{box-sizing:border-box}body{margin:0;background:var(--soft);color:var(--ink);font-family:system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;min-height:100vh;display:grid;place-items:center;padding:28px 16px}
+main{width:min(100%,720px)}.brand{display:flex;align-items:center;gap:10px;color:var(--green);font-size:14px;font-weight:750;letter-spacing:.02em;margin:0 0 20px 4px}.mark{display:grid;place-items:center;width:30px;height:30px;border-radius:10px;background:var(--green);color:#fff;font-size:17px}
+.panel{background:var(--white);border:1px solid #e7edf4;border-radius:24px;padding:clamp(24px,5vw,48px);box-shadow:var(--shadow)}.step{font-size:13px;font-weight:750;color:var(--green);margin:0 0 12px}.step span{color:#94a59b;font-weight:500}.progress{height:4px;background:#edf2f7;border-radius:5px;margin-bottom:32px;overflow:hidden}.progress i{display:block;width:33%;height:100%;background:var(--green);border-radius:5px}h1{font-size:clamp(25px,5vw,34px);line-height:1.3;letter-spacing:-.04em;margin:0 0 10px} .intro{color:var(--muted);line-height:1.65;margin:0 0 28px}.options{display:grid;gap:12px}.option{position:relative;display:flex;align-items:center;gap:16px;padding:17px 18px;border:1.5px solid var(--line);border-radius:16px;background:#fff;cursor:pointer;transition:.18s ease;min-height:88px}.option:hover{border-color:#9bb9d6;background:#fbfdff}.option:has(input:checked){border-color:var(--green);background:var(--accent);box-shadow:0 0 0 1px var(--green) inset}.option input{position:absolute;opacity:0;width:1px;height:1px}.option:focus-within{outline:3px solid #8bafd4;outline-offset:3px}.icon{width:48px;height:48px;flex:none;display:grid;place-items:center;border-radius:14px;background:#eff4f9;color:var(--green)}.option:has(input:checked) .icon{background:#d6e6f6}.icon svg{width:25px;height:25px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}.copy{flex:1}.title{font-size:16px;font-weight:750;line-height:1.4;display:block}.desc{font-size:13px;color:var(--muted);display:block;margin-top:4px;line-height:1.45}.radio{width:22px;height:22px;border:1.5px solid #b9c7d5;border-radius:50%;flex:none;display:grid;place-items:center}.option input:checked~.radio{border-color:var(--green);background:var(--green)}.option input:checked~.radio:after{content:"";width:7px;height:7px;border-radius:50%;background:white}.hint{font-size:12px;color:#7c8b82;margin:15px 2px 0}.actions{display:flex;justify-content:flex-end;gap:10px;margin-top:30px}.button{border:0;border-radius:12px;padding:14px 22px;font:inherit;font-size:15px;font-weight:750;cursor:pointer;min-height:50px}.button.primary{background:var(--green);color:#fff}.button.primary:hover{background:#20558b}.button.primary:disabled{background:#a9b8c8;cursor:not-allowed}.button.secondary{background:#eef3ef;color:var(--green)}.result{text-align:center;padding:24px 0 8px}.result .bigicon{width:64px;height:64px;display:grid;place-items:center;border-radius:20px;background:var(--accent);color:var(--green);font-size:29px;margin:0 auto 20px}.result p{color:var(--muted);line-height:1.7}.time-field{display:grid;gap:9px;max-width:380px;margin:32px auto 0;text-align:left}.time-field label{font-size:14px;font-weight:700}.time-wheels{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:10px;max-width:410px;margin:auto}.wheel-column{min-width:0;text-align:center}.wheel-label{display:block;font-size:13px;font-weight:750;margin-bottom:8px}.time-picker{height:220px;overflow-y:auto;overscroll-behavior:contain;scroll-snap-type:y mandatory;scrollbar-color:#9bb9d6 #eef3f9;border-block:1px solid var(--line);position:relative}.time-picker:focus{outline:3px solid #8bafd4;outline-offset:2px}.time-option{height:44px;display:flex;align-items:center;justify-content:center;scroll-snap-align:center;color:var(--muted);font-size:16px;cursor:pointer;border-radius:9px}.time-option input{position:absolute;opacity:0;width:1px;height:1px}.time-option:has(input:checked){background:var(--accent);color:var(--green);font-size:18px;font-weight:800}.time-option:focus-within{outline:2px solid #8bafd4}.time-spacer{height:88px;pointer-events:none}.picker-note{text-align:center;color:var(--muted);font-size:13px;margin:0 0 12px}.button.secondary{background:#eef3f9}.program-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}.program-option{display:flex;align-items:flex-start;gap:12px;padding:15px;border:1.5px solid var(--line);border-radius:14px;cursor:pointer;min-height:84px}.program-option:has(input:checked){background:var(--accent);border-color:var(--green)}.program-option input{accent-color:var(--green);width:18px;height:18px;margin:2px 0 0;flex:none}.program-option strong{display:block;font-size:14px;line-height:1.4}.program-option small{display:block;color:var(--muted);font-size:12px;line-height:1.45;margin-top:4px}.programs-summary{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:8px auto 18px}.programs-summary .tag{margin:0}@media(max-width:520px){.program-list{grid-template-columns:1fr}}.tag{display:inline-block;border-radius:99px;background:var(--accent);padding:8px 14px;color:var(--green);font-size:14px;font-weight:700;margin:8px 0 10px} [hidden]{display:none!important}
+@media(max-width:480px){body{padding:14px 12px}.panel{border-radius:20px}.option{padding:14px;gap:12px;min-height:82px}.icon{width:42px;height:42px}.actions .button{flex:1}}
+</style>
+</head>
+<body>
+<main>
+  <div class="brand"><span class="mark" aria-hidden="true">+</span>복지관 방문 준비</div>
+  <section class="panel" id="choiceView" aria-labelledby="heading">
+    <p class="step">방문 준비 <span>· 1단계</span></p><div class="progress" aria-hidden="true"><i></i></div>
+    <h1 id="heading">어떤 상황으로 방문하시나요?</h1>
+    <p class="intro">방문하시는 분과 동행 여부를 선택해 주세요.<br>상황에 맞는 안내를 준비하는 데 참고할게요.</p>
+    <form id="visitForm">
+      <div class="options" role="radiogroup" aria-labelledby="heading">
+        <label class="option"><input type="radio" name="visit" value="혼자 방문" required><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.2"/><path d="M5.5 20v-1.8a6.5 6.5 0 0 1 13 0V20"/></svg></span><span class="copy"><span class="title">혼자 방문해요</span><span class="desc">방문자 본인만 함께 가요</span></span><span class="radio" aria-hidden="true"></span></label>
+        <label class="option"><input type="radio" name="visit" value="보호자와 함께 방문"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="2.7"/><circle cx="17" cy="9" r="2.2"/><path d="M3.5 20v-1.6a5.5 5.5 0 0 1 11 0V20M15 14.5a4.4 4.4 0 0 1 5.5 4.2V20"/></svg></span><span class="copy"><span class="title">보호자와 함께 방문해요</span><span class="desc">가족이나 보호자가 동행해요</span></span><span class="radio" aria-hidden="true"></span></label>
+        <label class="option"><input type="radio" name="visit" value="영아 등 보호가 필요한 사람과 함께 방문"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M6 20v-2a6 6 0 0 1 12 0v2M9 8h.01M15 8h.01M10.5 11.5h3"/><path d="M4 6c1-2 2-3 4-3M20 6c-1-2-2-3-4-3"/></svg></span><span class="copy"><span class="title">영아 등 보호가 필요한 사람과 함께 가요</span><span class="desc">돌봄이나 보호가 필요한 분과 동행해요</span></span><span class="radio" aria-hidden="true"></span></label>
+        <label class="option"><input type="radio" name="visit" value="휠체어 이용으로 도움이 필요"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10" cy="4.5" r="1.8"/><path d="m10 8 1.2 5h4l2.3 3.5M10.7 10.5 7 13.5l-1 3.2a4.5 4.5 0 0 0 8.7 1.4M8.2 17h6.2M17.5 17.5l1.3 2"/></svg></span><span class="copy"><span class="title">휠체어를 이용하고 있어 도움이 필요해요</span><span class="desc">이동이나 출입에 지원이 필요해요</span></span><span class="radio" aria-hidden="true"></span></label>
+      </div>
+      <p class="hint">가장 가까운 상황 하나를 골라 주세요.</p>
+      <div class="actions"><button class="button primary" id="continueButton" type="submit" disabled>선택하고 계속</button></div>
+    </form>
+  </section>
+  <section class="panel" id="timeView" aria-labelledby="timeHeading" hidden>
+    <p class="step">방문 준비 <span>· 2단계</span></p><div class="progress" aria-hidden="true"><i style="width:66%"></i></div>
+    <h1 id="timeHeading">도착 예정 시간을 알려주세요</h1>
+    <p class="intro">복지관에 도착하실 시간을 선택해 주세요.</p>
+    <form id="timeForm">
+      <div class="time-field"><label id="arrivalLabel">도착 예정 시간</label><p class="picker-note">각 항목을 위아래로 스크롤해 선택해 주세요.</p><div class="time-wheels">
+        <div class="wheel-column"><span class="wheel-label">오전/오후</span><div class="time-picker" id="periodPicker" role="radiogroup" aria-label="오전 또는 오후" tabindex="0"><div class="time-spacer"></div><div id="periodOptions"></div><div class="time-spacer"></div></div></div>
+        <div class="wheel-column"><span class="wheel-label">시</span><div class="time-picker" id="hourPicker" role="radiogroup" aria-label="시" tabindex="0"><div class="time-spacer"></div><div id="hourOptions"></div><div class="time-spacer"></div></div></div>
+        <div class="wheel-column"><span class="wheel-label">분</span><div class="time-picker" id="minutePicker" role="radiogroup" aria-label="분" tabindex="0"><div class="time-spacer"></div><div id="minuteOptions"></div><div class="time-spacer"></div></div></div>
+      </div><input id="arrivalTime" name="arrivalTime" type="hidden"></div>
+      <div class="actions" style="justify-content:space-between"><button class="button secondary" id="backButton" type="button">이전</button><button class="button primary" type="submit">선택하고 계속</button></div>
+    </form>
+  </section>
+  <section class="panel" id="programView" aria-labelledby="programHeading" hidden>
+    <p class="step">방문 준비 <span>· 3단계</span></p><div class="progress" aria-hidden="true"><i style="width:100%"></i></div>
+    <h1 id="programHeading">관심 있는 프로그램을 선택해 주세요</h1>
+    <p class="intro">아래는 화면 확인을 위해 임의로 만든 프로그램 예시입니다. 실제 운영 프로그램은 복지관마다 다를 수 있어요. 여러 개 선택할 수 있어요.</p>
+    <form id="programForm">
+      <div class="program-list">
+        <label class="program-option"><input type="checkbox" name="program" value="건강 스트레칭 교실"><span><strong>건강 스트레칭 교실</strong><small>가벼운 체조와 몸풀기</small></span></label>
+        <label class="program-option"><input type="checkbox" name="program" value="스마트폰 기초 교실"><span><strong>스마트폰 기초 교실</strong><small>휴대전화와 앱 사용 배우기</small></span></label>
+        <label class="program-option"><input type="checkbox" name="program" value="함께하는 미술 시간"><span><strong>함께하는 미술 시간</strong><small>그림과 만들기를 통한 여가 활동</small></span></label>
+        <label class="program-option"><input type="checkbox" name="program" value="생활 한국어 모임"><span><strong>생활 한국어 모임</strong><small>일상 표현을 함께 연습하기</small></span></label>
+        <label class="program-option"><input type="checkbox" name="program" value="마음건강 상담"><span><strong>마음건강 상담</strong><small>고민을 나누고 상담받기</small></span></label>
+        <label class="program-option"><input type="checkbox" name="program" value="이웃과 함께하는 식사"><span><strong>이웃과 함께하는 식사</strong><small>이웃과 식사하며 교류하기</small></span></label>
+        <label class="program-option"><input type="checkbox" name="program" value="아직 정하지 않았어요"><span><strong>아직 정하지 않았어요</strong><small>방문 후 안내받고 싶어요</small></span></label>
+      </div>
+      <div class="actions" style="justify-content:space-between"><button class="button secondary" id="programBackButton" type="button">이전</button><button class="button primary" type="submit">선택 내용 확인</button></div>
+    </form>
+  </section>
+  <section class="panel result" id="resultView" aria-live="polite" hidden>
+    <div class="bigicon" aria-hidden="true">✓</div><p class="step">방문 준비 · 확인</p><h1>방문 정보를 확인해 주세요</h1>
+    <p>방문 상황</p><div class="tag" id="selectedText"></div><p>도착 예정 시간</p><div class="tag" id="timeText"></div><p>선택한 프로그램 <span style="font-size:12px">(예시)</span></p><div class="programs-summary" id="programSummary"></div>
+    <div class="actions" style="justify-content:center"><button class="button secondary" id="editButton" type="button">방문 정보 수정</button></div>
+  </section>
+</main>
+<script>
+const form=document.querySelector('#visitForm');
+const continueButton=document.querySelector('#continueButton');
+const choiceView=document.querySelector('#choiceView');
+const timeView=document.querySelector('#timeView');
+const timeForm=document.querySelector('#timeForm');
+const programView=document.querySelector('#programView');
+const programForm=document.querySelector('#programForm');
+const resultView=document.querySelector('#resultView');
+const arrivalTime=document.querySelector('#arrivalTime');
+let selectedPrograms=[];
+let selectedVisit='';
+const wheels=[
+  {picker:document.querySelector('#periodPicker'),list:document.querySelector('#periodOptions'),values:['오전','오후'],defaultValue:'오전'},
+  {picker:document.querySelector('#hourPicker'),list:document.querySelector('#hourOptions'),values:Array.from({length:12},(_,i)=>String(i+1)),defaultValue:'10'},
+  {picker:document.querySelector('#minutePicker'),list:document.querySelector('#minuteOptions'),values:Array.from({length:60},(_,i)=>String(i).padStart(2,'0')),defaultValue:'00'}
+];
+form.addEventListener('change',()=>{continueButton.disabled=!form.querySelector('input:checked')});
+form.addEventListener('submit',event=>{event.preventDefault();const selected=form.querySelector('input:checked');if(!selected)return;selectedVisit=selected.value;choiceView.hidden=true;timeView.hidden=false;requestAnimationFrame(centerSelectedWheels);wheels[0].picker.focus()});
+document.querySelector('#backButton').addEventListener('click',()=>{timeView.hidden=true;choiceView.hidden=false;continueButton.focus()});
+function displayTime(){const values=wheels.map(w=>w.list.querySelector('input:checked')?.value);if(values.some(v=>!v))return '';const [period,hour,minute]=values;const h24=(Number(hour)%12)+(period==='오후'?12:0);arrivalTime.value=String(h24).padStart(2,'0')+':'+minute;return period+' '+hour+'시 '+minute+'분'}
+timeForm.addEventListener('submit',event=>{event.preventDefault();const time=displayTime();if(!time){alert('오전/오후, 시, 분을 각각 선택해 주세요.');return}document.querySelector('#selectedText').textContent=selectedVisit;document.querySelector('#timeText').textContent=time;timeView.hidden=true;programView.hidden=false;programForm.querySelector('input')?.focus()});
+document.querySelector('#programBackButton').addEventListener('click',()=>{programView.hidden=true;timeView.hidden=false;requestAnimationFrame(centerSelectedWheels);wheels[0].picker.focus()});
+programForm.addEventListener('submit',event=>{event.preventDefault();selectedPrograms=[...programForm.querySelectorAll('input[name=program]:checked')].map(input=>input.value);if(selectedPrograms.includes('아직 정하지 않았어요'))selectedPrograms=['아직 정하지 않았어요'];if(!selectedPrograms.length){alert('관심 있는 프로그램을 하나 이상 선택해 주세요.');return}document.querySelector('#selectedText').textContent=selectedVisit;document.querySelector('#timeText').textContent=displayTime();const summary=document.querySelector('#programSummary');summary.replaceChildren(...selectedPrograms.map(name=>{const tag=document.createElement('span');tag.className='tag';tag.textContent=name;return tag}));programView.hidden=true;resultView.hidden=false;document.querySelector('#editButton').focus()});
+document.querySelector('#editButton').addEventListener('click',()=>{resultView.hidden=true;choiceView.hidden=false;form.querySelector('input:checked')?.focus()});
+function centerSelectedWheels(){wheels.forEach(w=>w.list.querySelector('input:checked')?.parentElement.scrollIntoView({block:'center'}))}
+function pickCentered(w){const box=w.picker.getBoundingClientRect(),center=box.top+box.height/2;let nearest=null,distance=Infinity;for(const row of w.list.querySelectorAll('.time-option')){const rect=row.getBoundingClientRect(),d=Math.abs(rect.top+rect.height/2-center);if(d<distance){nearest=row;distance=d}}if(nearest&&distance<32)nearest.querySelector('input').checked=true}
+for(const [index,w] of wheels.entries()){
+  for(const value of w.values){const label=document.createElement('label');label.className='time-option';const radio=document.createElement('input');radio.type='radio';radio.name='wheel'+index;radio.value=value;if(value===w.defaultValue)radio.checked=true;const text=document.createElement('span');text.textContent=value;label.append(radio,text);w.list.append(label)}
+  let timer;w.picker.addEventListener('scroll',()=>{clearTimeout(timer);timer=setTimeout(()=>pickCentered(w),90)});
+  w.picker.addEventListener('keydown',event=>{if(!['ArrowDown','ArrowUp'].includes(event.key))return;event.preventDefault();const radios=[...w.list.querySelectorAll('input')],selected=radios.findIndex(r=>r.checked),next=Math.max(0,Math.min(radios.length-1,selected+(event.key==='ArrowDown'?1:-1)));radios[next].checked=true;radios[next].parentElement.scrollIntoView({block:'center'})});
+}
+requestAnimationFrame(centerSelectedWheels);
+</script>
+</body>
+</html>
